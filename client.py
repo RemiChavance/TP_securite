@@ -1,5 +1,6 @@
 import socket
 import ssl
+import sys
 from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 
@@ -41,8 +42,7 @@ else:
     print(f"Le Common Name (CN) du certificat ne correspond pas à {HOST}")
     # Annulation de la connexion
     secure_client_socket.close()
-    sys.exit(
-        "La connexion est annulée en raison d'une non-correspondance du Common Name (CN).")
+    sys.exit("La connexion est annulée en raison d'une non-correspondance du Common Name (CN).")
 
 
 while True:
